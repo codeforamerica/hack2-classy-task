@@ -1,3 +1,3 @@
 class Guardian < ActiveRecord::Base
-  belongs_to :event
+  has_many :need
 end
