@@ -46,6 +46,12 @@ class SmsController < ApplicationController
   end
 
   def handle_list
+    needs = Need.all
+
+    resp_str = ""
+    needs.each {|n| resp_str += "#{n.id}: #{n.name}, #{n.start}. "}
+
+    resp resp_str
   end
 
   def handle_yes(from)
